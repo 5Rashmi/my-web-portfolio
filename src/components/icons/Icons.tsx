@@ -2,22 +2,35 @@ import React, { useRef } from "react";
 import { icons } from "../../datas/icons.data";
 import Draggable from "react-draggable";
 
-const Icons = () => {
-  const nodeRefs = useRef(icons.map(() => React.createRef<HTMLDivElement>()));
+type IconProps = {
+  onIconClick: (label: string) => void;
+};
+
+const Icons: React.FC<IconProps> = ({ onIconClick }) => {
+  const entries = Object.entries(icons);
+  const nodeRefs = useRef(entries.map(() => React.createRef<HTMLDivElement>()));
 
   return (
-    <div className="flex flex-col space-x-4">
-      {icons.map((icon, index) => (
+    <div
+      className="grid grid-rows-8 grid-flow-col auto-cols-max"
+      style={{ columnGap: "1.5em", rowGap: "1.6em" }}
+    >
+      {entries.map(([name, path], index) => (
         <Draggable
           key={index}
           nodeRef={nodeRefs.current[index] as React.RefObject<HTMLElement>}
         >
-          <div ref={nodeRefs.current[index]} className="cursor-pointer p-2">
+          <div
+            ref={nodeRefs.current[index]}
+            className="cursor-pointer p-0 m-0"
+            onClick={() => onIconClick(name)}
+          >
             <img
-              src={`/icons/refreshcl_by_tpdk/PNG/${icon}.png`}
-              alt={icon}
-              className="w-16 h-16"
+              src={`/icons/refreshcl_by_tpdk/PNG/${path}.png`}
+              alt={name}
+              className="w-14 h-14"
             />
+            <p className="mt-1 truncate text-center text-white">{name}</p>
           </div>
         </Draggable>
       ))}

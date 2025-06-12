@@ -1,22 +1,14 @@
-import BackgroundImage from "./BackgroundImage"; // Import background component
-import React, { useState } from "react";
-import { bgImg } from "../datas/wallpaper.data";
-import WallpaperSection from "./WallpaperSection";
+import BackgroundImage from "./BackgroundImage";
 
 interface LayoutProps {
+  bg: string;
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const [bg, setBg] = useState(bgImg[0]);
-
+const Layout: React.FC<LayoutProps> = ({ children, bg }) => {
   return (
-    <div className="relative h-screen w-screen overflow-hidden">
+    <div className="relative h-screen w-screen overflow-hidden z-0">
       <BackgroundImage bg={bg} />
-
-      <WallpaperSection setBg={setBg} />
-
-      {/* Page Content */}
       <div className="relative z-10">{children}</div>
     </div>
   );

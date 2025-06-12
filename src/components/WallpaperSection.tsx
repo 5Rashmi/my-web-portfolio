@@ -1,4 +1,3 @@
-import Draggable from "react-draggable";
 import { bgImg } from "../datas/wallpaper.data";
 
 type WallpaperSectionProps = {
@@ -6,12 +5,10 @@ type WallpaperSectionProps = {
 };
 
 const WallpaperSection: React.FC<WallpaperSectionProps> = ({ setBg }) => {
-  console.log("bgImg:", bgImg);
-
   return (
     <div>
       {/* Wallpaper Selection UI */}
-      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-4 bg-black/50 p-3 rounded-lg">
+      <div className="relative mx-auto grid grid-cols-5 grid-flow-row auto-rows-max gap-y-4 gap-x-5 bg-black/50 p-3 rounded-lg z-50 max-w-fit">
         {bgImg.map((b, index) => (
           <div
             key={index}
