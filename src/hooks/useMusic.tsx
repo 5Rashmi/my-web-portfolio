@@ -7,7 +7,6 @@ const useMusic = (query: string) => {
   const API_KEY = import.meta.env.VITE_X_RAPID_API_KEY;
 
   useEffect(() => {
-    console.log("Fetching Deezer with query:", query);
     if (!query) {
       return;
     }
