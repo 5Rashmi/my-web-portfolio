@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Icons from "./icons/Icons";
 import WindowManager from "../ui/Window/WindowManager";
+import AboutMe from "./widgets/AboutMe";
+import Skills from "./widgets/Skills";
+import Projects from "./widgets/Projects";
+import Experience from "./widgets/Experience";
 
 const Home = () => {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
@@ -20,6 +24,10 @@ const Home = () => {
         openWindows={openWindows}
         closeWindow={handleCloseWindow}
       />
+      <AboutMe />
+      <Skills />
+      <Experience />
+      <Projects />
     </>
   );
 };

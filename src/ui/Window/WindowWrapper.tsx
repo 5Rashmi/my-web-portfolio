@@ -17,12 +17,12 @@ const WindowWrapper: React.FC<WindowWrapperProps> = ({
   const [isMaximized, setIsMaximized] = useState(false);
 
   return (
-    <Draggable nodeRef={nodeRef} handle=".title-bar" disabled={isMaximized}>
+    <Draggable nodeRef={nodeRef}>
       <div
         ref={nodeRef}
         className={`z-50 ${
           isMaximized
-            ? "fixed top-0 left-0 w-screen h-screen"
+            ? "absolute top-0 left-0 w-screen h-screen"
             : "absolute top-20 left-20 w-[500px]"
         } bg-gray-800 rounded-lg shadow-xl text-white overflow-hidden transition-all duration-300`}
       >
