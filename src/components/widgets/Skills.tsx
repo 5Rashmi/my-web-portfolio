@@ -3,7 +3,7 @@ import SkillsCard from "../../ui/cards/SkillsCard";
 
 const Skills = () => {
   return (
-    <Widget left="left-[42%]" top="top-4">
+    <Widget left="left-[40%]" top="top-4">
       <div className="mb-4 flex flex-col text-white text-xs uppercase tracking-wider font-bold">
         <span className="flex flex-col px-2 py-1 bg-white/5 border border-white/10 rounded-l-md backdrop-blur-sm">
           Tech
