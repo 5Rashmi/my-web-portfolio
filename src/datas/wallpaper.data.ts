@@ -1,10 +1,12 @@
 export const bgImg = [
-    '/wallpaper/light.jpg',
-    '/wallpaper/light-upscaled.jpg',
-    '/wallpaper/dark.jpg',
-    '/wallpaper/dark-upscaled.jpg',
+    '/wallpaper/water-body-view.jpg',
+    '/wallpaper/jms.jpg',
     '/wallpaper/mountain-view.jpg',
+    '/wallpaper/freezydreamin.jpg',
+    '/wallpaper/jonatan-pie.jpg',
+    '/wallpaper/night-room.jpg',
+    '/wallpaper/silhouettes-hills-street.jpg',
+    '/wallpaper/light.jpg',
     '/wallpaper/ocean.jpg',
     '/wallpaper/u-tube-wallpaper.jpg',
-    '/wallpaper/water-body-view.jpg'
 ]

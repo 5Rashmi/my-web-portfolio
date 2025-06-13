@@ -6,6 +6,7 @@ import Skills from "./widgets/Skills";
 import Projects from "./widgets/Projects";
 import Experience from "./widgets/Experience";
 import SocialMedia from "./widgets/SocialMedia";
+import Resume from "./widgets/Resume";
 
 const Home = () => {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
@@ -30,6 +31,7 @@ const Home = () => {
       <Experience />
       <Projects />
       <SocialMedia />
+      <Resume />
     </>
   );
 };

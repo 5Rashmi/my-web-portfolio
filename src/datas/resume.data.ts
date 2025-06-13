@@ -1,0 +1,1 @@
+export const resumeData = "/public/resume/Rashmi_Resume.pdf";

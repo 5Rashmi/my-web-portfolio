@@ -16,11 +16,11 @@ const WeatherDisplay = () => {
 
   return (
     <div className="p-4 text-white">
-      <div className="flex items-center space-x-2">
+      <div className="flex text-sm items-center space-x-2">
         <img
           src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
           alt={description}
-          className="w-20 h-20"
+          className="w-12 h-12"
         />
         <p>{roundTemp}°C</p>
         <p>{sentenceCase}</p>
