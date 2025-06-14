@@ -1,3 +1,35 @@
+# 🪟 Rashmi's Web Portfolio
+
+A personal portfolio inspired by Desktop interface — featuring draggable windows, custom animations, live search powered by SerpAPI, and a MongoDB-based contact system. Built using modern frontend/backend stacks.
+
+## 🔗 Live Demo
+
+🌐 [Visit Portfolio](https://my-web-portfolio-one-peach.vercel.app/)
+
+---
+
+## ✨ Features
+
+- 🪟 **Windows-style UI** with draggable/resizable windows
+- 🗂️ **Multi-window management** for About, Projects, Skills, Contact, and more
+- 🔍 **Google-powered search** via [SerpAPI](https://serpapi.com/)
+- 🎧 **Music search** via [DeezerAPI](https://deezerdevs-deezer.p.rapidapi.com/)
+- 📩 **Contact form** that stores messages in MongoDB (Atlas)
+- 🔄 Realtime toasts for success and errors using `react-hot-toast`
+- 💾 Resume download with modern button design
+- ⚡ Hosted on **Vercel** (frontend) and **Render** (backend)
+
+---
+
+## 🧑‍💻 Built With
+
+- **Frontend**: React, TypeScript, Vite, Tailwind CSS  
+- **Backend**: Node.js, Express, Mongoose  
+- **Database**: MongoDB Atlas  
+- **Search API**: [SerpAPI](https://serpapi.com/)  
+- **Deployment**: Vercel (frontend), Render (backend)
+
+---
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
