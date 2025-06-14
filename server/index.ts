@@ -10,7 +10,13 @@ dotenv.config();
 const app = express();
 const MONGO_URI = process.env.MONGO_URI;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://your-frontend.vercel.app", // your actual Vercel frontend URL
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
