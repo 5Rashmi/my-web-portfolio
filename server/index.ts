@@ -28,7 +28,6 @@ app.get("/api/search", async (req, res) => {
         api_key: process.env.SERP_API_KEY,
       },
     });
-  console.log("Using SerpAPI Key:", process.env.SERP_API_KEY);
 
     res.json(response.data);
   } catch (error) {
