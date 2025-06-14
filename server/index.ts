@@ -12,7 +12,17 @@ const MONGO_URI = process.env.MONGO_URI;
 
 app.use(
   cors({
-    origin: "https://my-web-portfolio-one-peach.vercel.app/",
+    origin: (origin, callback) => {
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "https://my-web-portfolio-one-peach.vercel.app"
+      ];
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST"],
     credentials: true,
   })
