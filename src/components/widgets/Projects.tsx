@@ -11,21 +11,25 @@ const Projects = () => {
   return (
     <>
       <Widget left="left-[48%]" top="top-[20%]">
-        <div className="mb-4flex flex-col text-white text-xs uppercase tracking-wider font-bold">
-          <span className="flex flex-col px-2 py-1 bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-black rounded-r-md shadow-sm">
-            Projects
-          </span>
-        </div>
-        <div className="flex gap-4 flex-wrap cursor-move">
-          {projectsData.map((p) => (
-            <ProjectIconCard
-              key={p.title}
-              title={p.title}
-              Icon={p.Icon}
-              type={p.type}
-              onClick={() => setActiveProject(p)}
-            />
-          ))}
+        <div className="flex flex-col">
+          <div className="text-center relative mb-2">
+            <div className="flex flex-col text-white w-fit text-xs uppercase tracking-wider font-bold mx-auto">
+              <span className="flex flex-col px-2 py-1 bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-black rounded-r-md shadow-sm">
+                Projects
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-wrap cursor-move">
+            {projectsData.map((p) => (
+              <ProjectIconCard
+                key={p.title}
+                title={p.title}
+                Icon={p.Icon}
+                type={p.type}
+                onClick={() => setActiveProject(p)}
+              />
+            ))}
+          </div>
         </div>
       </Widget>
 

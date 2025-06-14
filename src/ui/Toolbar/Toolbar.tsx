@@ -19,7 +19,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ children }) => {
   return (
     <div className="fixed bottom-0 left-0 w-full h-12 bg-black/80 flex items-center justify-between px-4 z-50 text-white backdrop-blur-md border-t border-gray-600/30">
       {/* Left side */}
-      <div className="flex items-center gap-2">{children}</div>
+      <div className="flex items-center gap-6">{children}</div>
 
       {/* Right side */}
       <div className="flex items-center gap-4">

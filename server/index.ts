@@ -2,16 +2,22 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import axios from "axios";
+import mongoose from "mongoose";
+import Message from "./models/Message";
 
 dotenv.config();
 
 const app = express();
+const MONGO_URI = process.env.MONGO_URI;
 
-app.use(cors({
-  origin: "http://localhost:5173",
-  methods: ["GET", "POST"],
-  credentials: true,
-}));
+// app.use(cors({
+//   origin: "http://localhost:5173",
+//   methods: ["GET", "POST"],
+//   credentials: true,
+// }));
+app.use(cors());
+
+app.use(express.json());
 
 app.get("/api/search", async (req, res) => {
   const { q } = req.query;
@@ -39,6 +45,36 @@ app.get("/api/search", async (req, res) => {
   }
 });
 
+if (!MONGO_URI) {
+  console.error("❌ MONGO_URI is not defined in .env");
+  process.exit(1);
+}
+
+mongoose.connect(MONGO_URI)
+.then(() => console.log("MongoDB connected"))
+.catch((error) => {
+  console.error("Mongo connection error", error); 
+  process.exit(1);
+});
+
+app.post("/api/message", async (req, res) => {
+  try {
+    const newMsg = new Message(req.body);
+    await newMsg.save();
+    res.status(201).json({ success: true, message: "Message received!"});
+  } catch (error) {
+    res.status(500).json({success: false, message: "Error saving message"});
+  }
+});
+
+app.get("/api/message", async (req, res) => {
+  try {
+    const messages = await Message.find().sort({ createdAt: -1 });
+    res.json(messages);
+  } catch (error) {
+    res.status(500).json({message: "Error receiving message"});
+  }
+});
 
 const PORT = Number(process.env.PORT) || 8080;
 app.listen(PORT, () => {
