@@ -13,6 +13,8 @@ const MessageWindow: React.FC<WindowProps> = ({ onClose }) => {
     message: "",
   });
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -22,7 +24,7 @@ const MessageWindow: React.FC<WindowProps> = ({ onClose }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post(`${import.meta.env.VITE_BASE_URL}/api/message`, form);
+      await axios.post(`${BASE_URL}/api/message`, form);
       showSuccessToast("Message sent successfully!");
       setForm({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
