@@ -3,7 +3,7 @@ import Widget from "../../ui/widgets/Widget";
 
 const Resume = () => {
   return (
-    <Widget left="left-[74%]" top="top-[50%]">
+    <Widget left="left-[86%]" top="top-[60%]">
       <div className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 backdrop-blur-lg rounded-lg shadow text-white max-w-md">
         <img
           src="/icons/refreshcl_by_tpdk/PNG/Office/distributor-report.png"
@@ -17,7 +17,7 @@ const Resume = () => {
             download
             className="text-xs text-fuchsia-400 hover:underline"
           >
-            Click to download
+            Download
           </a>
         </div>
       </div>
