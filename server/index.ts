@@ -12,7 +12,7 @@ const MONGO_URI = process.env.MONGO_URI;
 
 app.use(
   cors({
-    origin: "https://your-frontend.vercel.app", // your actual Vercel frontend URL
+    origin: "https://my-web-portfolio-one-peach.vercel.app/",
     methods: ["GET", "POST"],
     credentials: true,
   })
