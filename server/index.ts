@@ -15,7 +15,8 @@ app.use(
     origin: (origin, callback) => {
       const allowedOrigins = [
         "http://localhost:5173",
-        "https://my-web-portfolio-one-peach.vercel.app"
+        "https://my-web-portfolio-one-peach.vercel.app",
+        "https://my-web-portfolio-xnsl.onrender.com"
       ];
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
