@@ -1,4 +1,4 @@
-# 🪟 Rashmi's Web Portfolio
+![Rashmi's Portfolio](https://img.shields.io/badge/Rashmi's%20Portfolio%20-purple?style=for-the-badge)
 
 A personal portfolio inspired by Desktop interface — featuring draggable windows, custom animations, live search powered by SerpAPI, and a MongoDB-based contact system. Built using modern frontend/backend stacks.
 
@@ -84,3 +84,4 @@ export default tseslint.config({
   },
 })
 ```
+### ![Thanks for visiting my Repository! Contributions and feedback are welcome.](https://img.shields.io/badge/Thanks%20for%20visiting%20my%20Repository!%20Contributions%20and%20feedback%20are%20welcome.-red?style=for-the-badge)
