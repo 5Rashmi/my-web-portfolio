@@ -103,5 +103,6 @@ With a focus on fluid mechanics, engaging level design, and strategic combat, Sh
 The addition of lighting effects enhances interactivity, making the gameplay visually striking and immersive. With structured and scalable code, Tic-Tac-Toe showcases expertise in game logic implementation, UI design, and interactive user experiences. 🚀`,
     stack: ["Vanilla JS", "CSS", "HTML"],
     githubLink: "https://github.com/5Rashmi/tic-tac-toe",
+    deploy: "https://5rashmi.github.io/tic-tac-toe/src/"
   },
 ];
