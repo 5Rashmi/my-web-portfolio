@@ -1,3 +1,35 @@
+![Rashmi's Portfolio](https://img.shields.io/badge/Rashmi's%20Portfolio%20-purple?style=for-the-badge)
+
+A personal portfolio inspired by Desktop interface — featuring draggable windows, custom animations, live search powered by SerpAPI, and a MongoDB-based contact system. Built using modern frontend/backend stacks.
+
+## 🔗 Live Demo
+
+🌐 [Visit Portfolio](https://my-web-portfolio-one-peach.vercel.app/)
+
+---
+
+## ✨ Features
+
+- 🪟 **Windows-style UI** with draggable/resizable windows
+- 🗂️ **Multi-window management** for About, Projects, Skills, Contact, and more
+- 🔍 **Google-powered search** via [SerpAPI](https://serpapi.com/)
+- 🎧 **Music search** via [DeezerAPI](https://deezerdevs-deezer.p.rapidapi.com/)
+- 📩 **Contact form** that stores messages in MongoDB (Atlas)
+- 🔄 Realtime toasts for success and errors using `react-hot-toast`
+- 💾 Resume download with modern button design
+- ⚡ Hosted on **Vercel** (frontend) and **Render** (backend)
+
+---
+
+## 🧑‍💻 Built With
+
+- **Frontend**: React, TypeScript, Vite, Tailwind CSS  
+- **Backend**: Node.js, Express, Mongoose  
+- **Database**: MongoDB Atlas  
+- **Search API**: [SerpAPI](https://serpapi.com/)  
+- **Deployment**: Vercel (frontend), Render (backend)
+
+---
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -52,3 +84,4 @@ export default tseslint.config({
   },
 })
 ```
+### ![Thanks for visiting my Repository! Contributions and feedback are welcome.](https://img.shields.io/badge/Thanks%20for%20visiting%20my%20Repository!%20Contributions%20and%20feedback%20are%20welcome.-red?style=for-the-badge)
