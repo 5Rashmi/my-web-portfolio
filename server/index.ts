@@ -83,22 +83,25 @@ app.post("/api/message", async (req, res) => {
 });
 
 app.post("/api/like", async (req, res) => {
-  try {
-    const likeDoc = await Like.findOne();
-    if (likeDoc) {
-      likeDoc.count += 1;
-      await likeDoc.save();
-    } else {
-      const newLike = new Like({ count: 1 });
-      await newLike.save();
-    }
+  const { userId } = req.body;
 
-    const updated = await Like.findOne();
-    res.json({ count: updated?.count || 0 });
-  } catch (error) {
-    res.status(500).json({ message: "Error updating like" });
+  let likeDoc = await Like.findOne();
+  if (!likeDoc) likeDoc = new Like({ users: [] });
+
+  if (!Array.isArray(likeDoc.users)) likeDoc.users = [];
+
+  const alreadyLiked = likeDoc.users.includes(userId);
+
+  if (alreadyLiked) {
+    likeDoc.users = likeDoc.users.filter(id => id !== userId);
+  } else {
+    likeDoc.users.push(userId);
   }
+
+  await likeDoc.save();
+  res.json({ liked: !alreadyLiked, count: likeDoc.users.length });
 });
+
 
 app.get("/api/like", async (req, res) => {
   try {

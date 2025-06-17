@@ -2,10 +2,12 @@
 import mongoose, { Document, Model } from "mongoose";
 
 interface ILike extends Document {
+    users: string[];
   count: number;
 }
 
 const likeSchema = new mongoose.Schema<ILike>({
+    users: [String],
   count: { type: Number, default: 0 },
 });
 

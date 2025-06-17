@@ -3,6 +3,7 @@ import WindowWrapper from "./WindowWrapper";
 import type { WindowProps } from "../../types/windowProps";
 import { showSuccessToast } from "../toast/CustomToast";
 import axios from "axios";
+import getUserId from "../../utils/userId";
 
 const LikeWindow: React.FC<WindowProps> = ({ onClose }) => {
   const [count, setCount] = useState(0);
@@ -15,7 +16,9 @@ const LikeWindow: React.FC<WindowProps> = ({ onClose }) => {
   };
 
   const handleLike = async () => {
-    const res = await axios.post(`${BASE_URL}/api/like`);
+    const userId = getUserId();
+
+    const res = await axios.post(`${BASE_URL}/api/like`, userId);
     setCount(res.data.count);
   };
 
