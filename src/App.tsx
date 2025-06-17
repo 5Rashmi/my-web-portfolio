@@ -1,15 +1,16 @@
 import "./App.css";
-import Layout from "./components/Layout";
-import Home from "./components/Home";
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { bgImg } from "./datas/wallpaper.data";
-import SettingsWindow from "./ui/Window/SettingsWindow";
 import Toolbar from "./ui/Toolbar/Toolbar";
-import MessageWindow from "./ui/Window/MessageWindow";
 import { Toaster } from "react-hot-toast";
 import LoadingScreen from "./ui/loading/LoadingScreen";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
+import Layout from "./components/Layout";
+
+const Home = lazy(() => import("./components/Home"));
+const SettingsWindow = lazy(() => import("./ui/Window/SettingsWindow"));
+const MessageWindow = lazy(() => import("./ui/Window/MessageWindow"));
 
 function App() {
   const [bg, setBg] = useState(bgImg[0]);
