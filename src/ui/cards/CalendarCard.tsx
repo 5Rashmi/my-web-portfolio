@@ -54,9 +54,9 @@ const CalendarCard = () => {
       </div>
 
       {showYearPicker && (
-        <div className="absolute top-16 left-1/2 -translate-x-1/2 bg-gray-800 border border-gray-600 p-4 rounded shadow grid grid-cols-4 gap-2 z-30">
-          {Array.from({ length: 20 }, (_, i) => {
-            const y = today.getFullYear() - 10 + i;
+        <div className="absolute max-h-[10rem] overflow-y-auto scrollbar-custom top-16 left-1/2 -translate-x-1/2 bg-gray-800 border border-gray-600 p-4 rounded shadow grid grid-cols-4 gap-2 z-30">
+          {Array.from({ length: 200 }, (_, i) => {
+            const y = today.getFullYear() - 100 + i;
             return (
               <button
                 key={y}

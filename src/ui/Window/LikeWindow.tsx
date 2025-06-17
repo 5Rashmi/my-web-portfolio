@@ -18,7 +18,7 @@ const LikeWindow: React.FC<WindowProps> = ({ onClose }) => {
   const handleLike = async () => {
     const userId = getUserId();
 
-    const res = await axios.post(`${BASE_URL}/api/like`, userId);
+    const res = await axios.post(`${BASE_URL}/api/like`, { userId });
     setCount(res.data.count);
   };
 

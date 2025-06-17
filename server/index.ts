@@ -83,7 +83,7 @@ app.post("/api/message", async (req, res) => {
 });
 
 app.post("/api/like", async (req, res) => {
-  const { userId } = req.body;
+  const { userId } = req.body || {};
 
   let likeDoc = await Like.findOne();
   if (!likeDoc) likeDoc = new Like({ users: [] });
