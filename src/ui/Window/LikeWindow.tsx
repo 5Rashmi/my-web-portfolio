@@ -57,9 +57,9 @@ const LikeWindow: React.FC<WindowProps> = ({ onClose }) => {
           />
           <button
             type="submit"
-            className="bg-blue-600 px-4 py-1 rounded hover:bg-blue-700"
+            className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-6 py-2 rounded-full shadow-md hover:shadow-lg transition duration-300 ease-in-out font-semibold tracking-wide mt-3"
           >
-            Submit Suggestion
+            💡 Submit Suggestion
           </button>
         </form>
       </div>

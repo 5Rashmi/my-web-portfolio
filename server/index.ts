@@ -5,7 +5,6 @@ import axios from "axios";
 import mongoose from "mongoose";
 import Message from "./models/Message";
 import Like from "./models/Like";
-import { count } from "console";
 import Comments from "./models/Comments";
 
 dotenv.config();
