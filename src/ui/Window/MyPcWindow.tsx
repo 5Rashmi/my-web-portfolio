@@ -23,9 +23,9 @@ const MyPcWindow: React.FC<WindowProps> = ({ onClose }) => {
 
   const handleBack = () => {
     if (activeFile) {
-      setActiveFile(null); // go back to folder view
+      setActiveFile(null);
     } else if (activeFolderIndex !== null) {
-      setActiveFolderIndex(null); // go back to all folders
+      setActiveFolderIndex(null);
     }
   };
 

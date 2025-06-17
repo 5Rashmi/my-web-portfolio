@@ -30,7 +30,7 @@ const Icons: React.FC<IconProps> = ({ onIconClick }) => {
               alt={name}
               className="w-14 h-14"
             />
-            <p className="mt-1 truncate text-center text-white">{name}</p>
+            <p className="mt-1 ml-2 truncate text-white">{name}</p>
           </div>
         </Draggable>
       ))}

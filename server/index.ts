@@ -4,6 +4,9 @@ import cors from "cors";
 import axios from "axios";
 import mongoose from "mongoose";
 import Message from "./models/Message";
+import Like from "./models/Like";
+import { count } from "console";
+import Comments from "./models/Comments";
 
 dotenv.config();
 
@@ -84,6 +87,44 @@ app.get("/api/message", async (req, res) => {
     res.json(messages);
   } catch (error) {
     res.status(500).json({message: "Error receiving message"});
+  }
+});
+
+app.post("/api/like", async (req, res) => {
+  try {
+    const likeDoc = await Like.findOne();
+    if (likeDoc) {
+      likeDoc.count += 1;
+      await likeDoc.save();
+    } else {
+      const newLike = new Like({ count: 1 });
+      await newLike.save();
+    }
+
+    const updated = await Like.findOne();
+    res.json({ count: updated?.count || 0 });
+  } catch (error) {
+    res.status(500).json({ message: "Error updating like" });
+  }
+});
+
+app.get("/api/like", async (req, res) => {
+  try {
+    const like = await Like.findOne();
+    res.json({ count: like?.count || 0 });
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching likes" });
+  }
+});
+
+app.post("/api/comment", async (req, res) => {
+  try {
+    const { message } = req.body;
+    const newComment = new Comments({ message, createdAt: new Date() });
+    await newComment.save();
+    res.status(201).json({ success: true, message: "Comment saved" });
+  } catch (error) {
+    res.status(500).json({ message: "Error saving comment" });
   }
 });
 

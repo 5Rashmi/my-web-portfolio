@@ -13,7 +13,7 @@ const InternetPage = () => {
 
     const links = data?.organic_results || [];
     setResults(links);
-    setHasSearched(true); // ← Add this line
+    setHasSearched(true);
   };
 
   return (
