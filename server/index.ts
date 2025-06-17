@@ -97,6 +97,7 @@ app.post("/api/like", async (req, res) => {
   } else {
     likeDoc.users.push(userId);
   }
+  likeDoc.count = likeDoc.users.length;
 
   await likeDoc.save();
   res.json({ liked: !alreadyLiked, count: likeDoc.users.length });
@@ -106,7 +107,7 @@ app.post("/api/like", async (req, res) => {
 app.get("/api/like", async (req, res) => {
   try {
     const like = await Like.findOne();
-    res.json({ count: like?.count || 0 });
+    res.json({ count: like?.users.length || 0 });
   } catch (error) {
     res.status(500).json({ message: "Error fetching likes" });
   }
