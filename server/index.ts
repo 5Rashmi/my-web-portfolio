@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import Message from "./models/Message";
 import Like from "./models/Like";
 import Comments from "./models/Comments";
+import notifyYou from "./notifyYou";
 
 dotenv.config();
 
@@ -74,18 +75,10 @@ app.post("/api/message", async (req, res) => {
   try {
     const newMsg = new Message(req.body);
     await newMsg.save();
+    await notifyYou(newMsg);
     res.status(201).json({ success: true, message: "Message received!"});
   } catch (error) {
     res.status(500).json({success: false, message: "Error saving message"});
-  }
-});
-
-app.get("/api/message", async (req, res) => {
-  try {
-    const messages = await Message.find().sort({ createdAt: -1 });
-    res.json(messages);
-  } catch (error) {
-    res.status(500).json({message: "Error receiving message"});
   }
 });
 
@@ -121,6 +114,8 @@ app.post("/api/comment", async (req, res) => {
     const { message } = req.body;
     const newComment = new Comments({ message, createdAt: new Date() });
     await newComment.save();
+    await notifyYou(newComment);
+
     res.status(201).json({ success: true, message: "Comment saved" });
   } catch (error) {
     res.status(500).json({ message: "Error saving comment" });
