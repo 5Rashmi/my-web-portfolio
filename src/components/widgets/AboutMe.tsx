@@ -17,7 +17,8 @@ const AboutMe = () => {
 
         <a
           href={resumeData}
-          download
+          download="Rashmi_Resume.pdf"
+          type="application/pdf"
           className="absolute top-0 left-[140%] bg-white/10 backdrop-blur-md text-white px-3 py-1 rounded text-xs border border-white/20 hover:bg-white/20 transition"
         >
           Resume

@@ -1,1 +1,1 @@
-export const resumeData = "/public/resume/Rashmi_Resume.pdf";
+export const resumeData = "/resume/Rashmi_Resume.pdf";
