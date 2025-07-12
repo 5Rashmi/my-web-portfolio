@@ -3,7 +3,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "outDir": "dist/server",
     "strict": true,
     "esModuleInterop": true,
@@ -11,5 +11,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["server/**/*"]
+  "include": ["server", "server/types.d.ts"]
 }
