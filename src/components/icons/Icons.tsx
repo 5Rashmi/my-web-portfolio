@@ -12,7 +12,7 @@ const Icons: React.FC<IconProps> = ({ onIconClick }) => {
 
   return (
     <div
-      className="grid grid-rows-8 grid-flow-col auto-cols-max"
+      className="grid grid-rows-6 grid-flow-col auto-cols-max"
       style={{ columnGap: "1.5em", rowGap: "1.6em" }}
     >
       {entries.map(([name, path], index) => (
@@ -28,9 +28,11 @@ const Icons: React.FC<IconProps> = ({ onIconClick }) => {
             <img
               src={`/icons/refreshcl_by_tpdk/PNG/${path}.png`}
               alt={name}
-              className="w-14 h-14"
+              className="w-14 h-14 ml-1.5 mt-1"
             />
-            <p className="mt-1 ml-2 truncate text-white">{name}</p>
+            <p className="mt-1 ml-2 truncate px-1 text-[13px] text-white font-[Segoe UI] text-shadow">
+              {name}
+            </p>
           </div>
         </Draggable>
       ))}

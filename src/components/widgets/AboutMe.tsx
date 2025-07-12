@@ -5,7 +5,7 @@ import { FaLaptopCode } from "react-icons/fa";
 const AboutMe = () => {
   return (
     <Widget
-      left="left-[12em]"
+      left="left-[15em]"
       top="top-4"
       className="bg-gradient-to-br from-[#1f1c2c] via-[#7d7994] to-[#1f1c2c] text-white rounded-xl p-5 w-[340px] h-[200px] shadow-2xl flex flex-col justify-between font-mono"
     >

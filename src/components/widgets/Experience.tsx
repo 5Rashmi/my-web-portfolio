@@ -11,7 +11,7 @@ const Experience = () => {
 
   return (
     <>
-      <Widget left="left-[12em]" top="top-[27%]">
+      <Widget left="left-[15em]" top="top-[40%]">
         <div className="flex flex-col">
           <div className="text-center relative mb-2">
             <div className="flex flex-col text-white w-fit text-xs uppercase tracking-wider font-bold mx-auto">

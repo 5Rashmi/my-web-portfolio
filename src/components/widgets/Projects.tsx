@@ -10,7 +10,7 @@ const Projects = () => {
 
   return (
     <>
-      <Widget left="left-[48%]" top="top-[20%]">
+      <Widget left="left-[48%]" top="top-[36%]">
         <div className="flex flex-col">
           <div className="text-center relative mb-2">
             <div className="flex flex-col text-white w-fit text-xs uppercase tracking-wider font-bold mx-auto">

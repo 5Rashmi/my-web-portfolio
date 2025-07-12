@@ -16,6 +16,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "mathjs": "^14.5.3",
     "mongoose": "^8.15.2",
     "nodemailer": "^7.0.3",
     "postcss": "^8.5.4",

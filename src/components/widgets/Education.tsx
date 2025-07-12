@@ -4,7 +4,7 @@ import { educationData } from "../../datas/education.data";
 
 const Education = () => {
   return (
-    <Widget left="left-[80%]" top="top-[20%]">
+    <Widget left="left-[80%]" top="top-[36%]">
       <EducationCard educationData={educationData} />
     </Widget>
   );

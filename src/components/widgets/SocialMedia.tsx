@@ -4,7 +4,7 @@ import Widget from "../../ui/widgets/Widget";
 
 const SocialMedia = () => {
   return (
-    <Widget left="left-[74%]" top="top-4">
+    <Widget left="left-[75%]" top="top-4">
       <div className="flex flex-col">
         <div className="text-center relative mb-6">
           <h2 className="text-md md:text-md font-extrabold text-white tracking-wide relative z-10">
