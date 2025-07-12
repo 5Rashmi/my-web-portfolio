@@ -34,12 +34,28 @@ app.use(
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+  const ua = req.headers['user-agent'];
+  if (/bot|crawl|spider|slurp/i.test(ua || '')) {
+    console.log('Bot detected:', ua);
+    return next();
+  }
+  next();
+});
+
+
 app.get("/api/search", async (req, res): Promise<void> => {
   const { q } = req.query;
+  const hasLocation = req.headers['x-vercel-ip-city'] || req.headers['x-forwarded-for'];
+const ua = req.headers['user-agent'];
+const looksBot = /bot|crawl|spider|slurp/i.test(ua || '');
 
-  const isUserTriggered = req.headers['x-user-search'] === "true";
+const isUserTriggered = req.headers['x-user-search'] === "true";
 
-  if (!isUserTriggered) {
+  if (!isUserTriggered) {if (!isUserTriggered || !hasLocation || looksBot) {
+    res.status(403).json({ error: "Blocked automatic search" });
+  return;
+}
     res.status(403).json({ error: "Blocked automatic call"});
     return;
   }
