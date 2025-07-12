@@ -3,11 +3,10 @@ import dotenv from "dotenv";
 import cors from "cors";
 import axios from "axios";
 import mongoose from "mongoose";
-import Message from "./models/Message";
-import Like from "./models/Like";
-import Comments from "./models/Comments";
-import notifyYou from "./notifyYou";
-import { error } from "console";
+import Message from "./models/Message.js";
+import Like from "./models/Like.js";
+import Comments from "./models/Comments.js";
+import notifyYou from "./notifyYou.js";
 
 dotenv.config();
 
@@ -63,7 +62,7 @@ app.get("/api/search", async (req, res): Promise<void> => {
     });
 
     res.json(response.data);
-  } catch (error) {
+  } catch (error: any) {
     console.error("Backend error:", error);
     res.status(500).json({
       error: "Search failed",

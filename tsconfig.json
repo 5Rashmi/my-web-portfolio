@@ -1,11 +1,14 @@
 {
   "files": [],
   "compilerOptions": {
-    "esModuleInterop": true,
-    "module": "ESNext",
     "target": "ES2020",
+    "module": "ESNext",
     "moduleResolution": "Node",
-    "moduleDetection": "force"
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "dist"
   },
   "references": [
     { "path": "./tsconfig.app.json" },

@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "ts-node-dev --loader ts-node/esm --no-warnings server/index.ts"
+    "build:server": "tsc -p tsconfig.server.json",
+    "start": "node dist/server/index.js"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.8",
@@ -18,7 +19,7 @@
     "express": "^5.1.0",
     "mathjs": "^14.5.3",
     "mongoose": "^8.15.2",
-    "nodemailer": "^7.0.3",
+    "nodemailer": "^7.0.5",
     "postcss": "^8.5.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -33,8 +34,10 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.1",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
