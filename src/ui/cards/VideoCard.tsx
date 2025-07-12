@@ -2,6 +2,14 @@ import { useEffect } from "react";
 
 const VideoCard = () => {
   useEffect(() => {
+    (window as any).atOptions = {
+      key: "45172ca47cf67a8739ad6adcaea61534",
+      format: "iframe",
+      height: 90,
+      width: 728,
+      params: {},
+    };
+
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.src =
