@@ -5,7 +5,6 @@ import type { WindowProps } from "../types/windowProps";
 import MusicWindow from "../ui/Window/MusicWindow";
 import LikeWindow from "../ui/Window/LikeWindow";
 import CalculatorWindow from "../ui/Window/CalculatorWindow";
-import VideoWindow from "../ui/Window/VideoWindow";
 
 export const icons = {
     "Rashmi's PC" : 'Hardware/MyComputer1',
@@ -13,7 +12,6 @@ export const icons = {
     Calendar : 'System/Calendar',
     Calculator: 'System/Calc',
     Music : 'Hardware/HeadPhones',
-    Video: 'System/video',
     "Like This": 'Symbols/Favourite2',
 }
 
@@ -24,6 +22,5 @@ export const windowComponents: Record<string, React.FC<WindowProps>> = {
   Calendar: CalendarWindow,
   Calculator: CalculatorWindow,
   Music: MusicWindow,
-  Video: VideoWindow,
   "Like This": LikeWindow,
 };
