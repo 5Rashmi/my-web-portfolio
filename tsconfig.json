@@ -2,9 +2,10 @@
   "files": [],
   "compilerOptions": {
     "esModuleInterop": true,
-    "module": "CommonJS",
+    "module": "ESNext",
     "target": "ES2020",
     "moduleResolution": "Node",
+    "moduleDetection": "force"
   },
   "references": [
     { "path": "./tsconfig.app.json" },

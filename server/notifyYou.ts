@@ -1,5 +1,4 @@
 import nodemailer from "nodemailer";
-import { text } from "stream/consumers";
 
 const notifyYou = async (msg) => {
     const transporter = nodemailer.createTransport({
