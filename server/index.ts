@@ -7,6 +7,7 @@ import Message from "./models/Message";
 import Like from "./models/Like";
 import Comments from "./models/Comments";
 import notifyYou from "./notifyYou";
+import { error } from "console";
 
 dotenv.config();
 
@@ -34,8 +35,20 @@ app.use(
 
 app.use(express.json());
 
-app.get("/api/search", async (req, res) => {
+app.get("/api/search", async (req, res): Promise<void> => {
   const { q } = req.query;
+
+  const isUserTriggered = req.headers['x-user-search'] === "true";
+
+  if (!isUserTriggered) {
+    res.status(403).json({ error: "Blocked automatic call"});
+    return;
+  }
+
+  if (!q) {
+    res.status(400).json({ error: "Query required"});
+    return;
+  }
 
   try {
     const response = await axios.get(`https://serpapi.com/search.json`, {

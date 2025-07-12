@@ -24,7 +24,6 @@ const useMusic = (query: string) => {
           }
         );
 
-        console.log("Music data: ", response.data);
         const data = response.data.data.map((t: any) => ({
           id: t.id,
           title: t.title,
