@@ -1,11 +1,6 @@
 import nodemailer from "nodemailer";
 
-interface Msg {
-  message?: string;
-  name?: string;
-}
-
-const notifyYou = async (msg: Msg): Promise<void> => {
+const notifyYou = async (msg: { name?: string; message?: string }) => {
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
