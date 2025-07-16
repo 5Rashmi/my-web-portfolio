@@ -65,6 +65,11 @@ const isUserTriggered = req.headers['x-user-search'] === "true";
     return;
   }
 
+  if (q === "test") {
+  res.status(403).json({ error: "Blocked test query" });
+  return;
+}
+
   try {
     const response = await axios.get(`https://serpapi.com/search.json`, {
       params: {
@@ -106,7 +111,7 @@ app.post("/api/message", async (req, res) => {
     await notifyYou(newMsg);
     res.status(201).json({ success: true, message: "Message received!"});
   } catch (error) {
-    res.status(500).json({success: false, message: "Error saving message"});
+    res.status(500).json({success: false, message: "Error saving message", error});
   }
 });
 
@@ -137,7 +142,7 @@ app.get("/api/like", async (req, res) => {
     const like = await Like.findOne();
     res.json({ count: like?.users.length || 0 });
   } catch (error) {
-    res.status(500).json({ message: "Error fetching likes" });
+    res.status(500).json({ message: "Error fetching likes", error });
   }
 });
 
@@ -150,7 +155,7 @@ app.post("/api/comment", async (req, res) => {
 
     res.status(201).json({ success: true, message: "Comment saved" });
   } catch (error) {
-    res.status(500).json({ message: "Error saving comment" });
+    res.status(500).json({ message: "Error saving comment", error });
   }
 });
 
