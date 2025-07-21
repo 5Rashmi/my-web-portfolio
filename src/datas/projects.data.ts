@@ -2,9 +2,33 @@ import type { ProjectType } from "../types/projectType";
 
 export const projectsData: ProjectType[] = [
   {
-    title: "Personal Anime Watchlist",
+    title: "AuraVerse",
     type: "Web App",
     status: "Ongoing",
+    Icon: "/icons/project-logos/aura-verse.png",
+    description:`AuraVerse is an intelligent, mood-driven recommendation platform designed to understand emotions and respond with personalized suggestions. From music and books to movies and ambient settings, AuraVerse creates a tailored experience by interpreting user input using natural language processing (NLP).
+
+Built with a modern full-stack architecture — including Next.js, TypeScript, Express, and MongoDB — the platform ensures security, speed, and scalability across all layers.
+
+🔹 Key Features
+
+🧠 Emotion Parsing AI – Uses NLP to analyze user moods and interpret emotional context in real-time.
+🔐 Secure Auth System – Protects user data with JWT and bcrypt-based authentication.
+👤 Custom User Profiles – Users can personalize their avatar, name, and bio for a richer experience.
+📚🎶📽️ Smart Recommendations – Curates books, music, and movies based on mood analysis.
+🌐 Modern Frontend – Developed with Next.js and TypeScript for a fast, responsive interface.
+🗂️ Modular Backend – Combines Express and Flask APIs for flexible and scalable data handling.
+📊 Dynamic Mood Responses – Instantly reacts to user-selected moods with tailored content.
+🛡️ Built-in Security & Performance – Backend designed with performance, scalability, and protection in mind.
+
+AuraVerse bridges emotional intelligence with tech innovation, offering a deeply personalized and immersive web experience. 🚀`,
+    stack: ["MERN", "NextJS", "Typescript", "Tailwind CSS", "Flask"],
+    githubLink: "https://github.com/5Rashmi/aura-verse",
+  },
+  {
+    title: "Personal Anime Watchlist",
+    type: "Web App",
+    status: "Completed",
     Icon: "/icons/project-logos/paw.png",
     description: `Personal Anime Watchlist is a MERN stack web application designed for anime enthusiasts to efficiently manage and track their watchlists. Built with React, TypeScript, Chakra UI, MongoDB, Express.js, and Node.js, the project provides an intuitive and dynamic interface with secure backend functionalities.
 
