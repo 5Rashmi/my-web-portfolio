@@ -5,6 +5,7 @@ import type { WindowProps } from "../types/windowProps";
 import MusicWindow from "../ui/Window/MusicWindow";
 import LikeWindow from "../ui/Window/LikeWindow";
 import CalculatorWindow from "../ui/Window/CalculatorWindow";
+import BlogWindow from "../ui/Window/BlogWindow";
 
 export const icons = {
     "Rashmi's PC" : 'Hardware/MyComputer1',
@@ -13,6 +14,7 @@ export const icons = {
     Calculator: 'System/Calc',
     Music : 'Hardware/HeadPhones',
     "Like This": 'Symbols/Favourite2',
+    Blog : 'System/Blog',
 }
 
 // 👇 mapping label to component
@@ -23,4 +25,5 @@ export const windowComponents: Record<string, React.FC<WindowProps>> = {
   Calculator: CalculatorWindow,
   Music: MusicWindow,
   "Like This": LikeWindow,
+  Blog: BlogWindow
 };

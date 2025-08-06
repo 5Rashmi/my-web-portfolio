@@ -2,8 +2,8 @@ import { useState } from "react";
 import { evaluate } from "mathjs";
 
 const CalculatorCard = () => {
-  let [display, setDisplay] = useState("");
-  let [ans, setAns] = useState("");
+  const [display, setDisplay] = useState("");
+  const [ans, setAns] = useState("");
 
   const handleCalculation = (value: string) => {
     if (value === "AC") {
